@@ -16,6 +16,8 @@ After you complete this exercise, you will be able to:
 
 ===
 
+<div style="page-break-after: always;"></div>
+
 # Task 01: Create an API in Azure API Management
 
 ## Introduction
