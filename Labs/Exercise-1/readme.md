@@ -36,12 +36,12 @@ In this task, you create an account so that you can access SAP resources.
 
 ## Key tasks
 
-1. [] Sign in to the @lab.VirtualMachine(Base23C).SelectLink virtual machine by using the following credentials:
+1. [] Sign in to the @lab.VirtualMachine(WindowsDesktop).SelectLink virtual machine by using the following credentials:
 
-   - Username: +++Admin+++
-   - Password: +++@lab.VirtualMachine(Base23C).Password+++
+   - Username: **Admin**
+   - Password: +++@lab.VirtualMachine(WindowsDesktop).Password+++
 
-2. [] Open Edge and go to `https://www.sap.com`.
+2. [] Open Edge and go to `sap.com`.
 
 3. [] At the upper right of the page, select the Sign in icon.
 
@@ -58,7 +58,7 @@ In this task, you create an account so that you can access SAP resources.
 
 5. [] Enter the following information on the **Register** page of the **We see you're new to SAP** dialog:
 
-	| Field | Value |
+	| box | Value |
 	|:---------|:------|
     | First name| `Admin` |
     |Last name |`User`   |
@@ -91,7 +91,7 @@ In this task, you create an account so that you can access SAP resources.
     SAP Account activation link: @lab.TextBox(SAPActivationLink)
 
     > [!WARNING]
-    > After pasting the value into the text field, select the **Tab** key or select any element outside of the text field. This ensures that the value is saved for use later in the lab.
+    > After pasting the value into the text box, select the **Tab** key or any element outside of the text box. This ensures that the value is saved for use later in the lab.
 
 12. [] Return to the lab environment. Open a new browser window and go to `@lab.Variable(SAPActivationLink)`.
 
@@ -100,21 +100,9 @@ In this task, you create an account so that you can access SAP resources.
     - Password: `@lab.CloudPortalCredential(User1).Password`
     - Re-Enter Password: `@lab.CloudPortalCredential(User1).Password`
 
-14. [] Select the **I acknowledge that I have read the SAP Universal ID Terms of Use** checkbox and then select **Submit**.
+14. [] Select **Continue** through the remaining steps.
 
-    ![The Finalize your account form is displayed.](media/sap-finalize-account-form.png)
-
-15. [] On the **SAP ID Service** Sign in page, enter the following email address and then select **Continue**:
-
-    Username: `@lab.CloudPortalCredential(User1).Username`
-
-    ![The SAP ID Service Sign in page is displayed.](media/sap-id-service-sign-in.png)
-
-16. [] Wait for the **Thank you!** page to display.
-
-    ![The Thank you page is displayed.](media/sap-thank-you.png)
-
-17. [] Close the **Thank you** dialog.
+17. [] Close the **Welcome to your SAP.com account** dialog.
 
 ===
 
@@ -138,21 +126,19 @@ In this task, you sign in to the SAP developer site and create an account. The a
 
 ## Key tasks
 
-1. [] Open a new browser window and go to `https://register.sapdevcenter.com/SUPSignForms/`.
+1. [] Open a new browser tab and go to `register.sapdevcenter.com/SUPSignForms/`.
 
-2. [] If prompted, sign in by using the credentials you used in Task 01 to create your SAP account.
-
-3. [] On the **SAP Gateway Demo Server -ES5** page that displays, copy the User ID value to the Windows clipboard. Paste the value in the following text field:
+1. [] On the **SAP Gateway Demo Server -ES5** page, copy the **User ID** value and paste it in the following text box:
 
     User ID: @lab.TextBox(ES5UserID)
 
-4. [] On the **SAP Gateway Demo Server -ES5** page, select the **I have read and understood the Terms and Conditions** checkbox and then select **Register**.
+1. [] Select the **I have read and understood the Terms and Conditions** checkbox, then select **Register**.
 
     ![The SAP Gateway Demo Server -ES5 registration form is displayed.](media/sap-gateway-demo-registration-form.png)
 
-5. [] You should see a new page display. The page will report that the registration is being processed.
+	>[!note] You'll see a page that says the registration is now being processed.
 
-6. [] Select **Show password**. Paste the temporary password into the following text field:
+1. [] Select **Show password**. Paste the temporary password into the following text box:
 
     Temporary Password: @lab.TextBox(ES5TemPW)
 
@@ -161,24 +147,28 @@ In this task, you sign in to the SAP developer site and create an account. The a
     > [!NOTE]
     > The SAP system will send you an email that includes the Server URI, username, and initial password.
 
-7. [] Open a new browser window and go to `https://sapes5.sapdevcenter.com/sap/bc/gui/sap/its/webgui`
+1. [] Open a new browser tab and go to `https://sapes5.sapdevcenter.com/sap/bc/gui/sap/its/webgui`
 
-8. [] On the **SAP NetWeaver** page that opens, enter the following credentials and then select **Log on**:
+1. [] On the **SAP NetWeaver** page, enter the following credentials, then then select **Log On**:
 
-    Username: +++@lab.Variable(ES5UserID)+++
-    Password: +++@lab.Variable(ES5TemPW)+++
+    | Item | Value |
+    | ---- | ----- |
+    | **User** | `@lab.Variable(ES5UserID)` |
+    | **Password** | `@lab.Variable(ES5TemPW)` |
 
     ![The SAP NetWeaver login page is displayed.](media/sap-netweaver-login.png)
 
-9. [] On the **SAP NetWeaver** page that displays, enter the following information to replace the temporary password and then select **Change**:
+1. [] On the **SAP NetWeaver** page that displays, enter the following information to replace the temporary password and then select **Change**:
 
-    Current Password: `@lab.Variable(ES5TemPW)`
-    New Password: `@lab.CloudPortalCredential(User1).Password`
-    Repeat Password: `@lab.CloudPortalCredential(User1).Password`
+    | Item | Value |
+    | ---- | ----- |
+    | **Current Password** | `@lab.Variable(ES5TemPW)` |
+    | **New Password** | `@lab.CloudPortalCredential(User1).Password` |
+	| **Repeat Password** | `@lab.CloudPortalCredential(User1).Password` |
 
     ![The change password page is displayed.](media/sap-netweaver-change-password.png)
 
-10. [] On the SAP NetWeaver page that displays, verify that the password was changed successfully and then select **Continue**.
+1. [] Verify the password was changed successfully, then select **Continue**.
 
     ![The password change success message is displayed.](media/sap-netweaver-password-change-success.png)
 
@@ -200,30 +190,22 @@ In this task, copy the SAP Gateway Demo API metadata, transform it into the Open
 
 ## Key tasks
 
-1. [] Open a new browser window and go to `https://sapes5.sapdevcenter.com/sap/opu/odata/iwbep/GWSAMPLE_BASIC/$metadata`. When prompted, enter the following credentials and then select **Log on**:
+1. [] Open a new browser tab and go to `sapes5.sapdevcenter.com/sap/opu/odata/iwbep/GWSAMPLE_BASIC/$metadata`. 
 
-    Username: +++@lab.Variable(ES5UserID)+++
-    Password: +++@lab.CloudPortalCredential(User1).Password+++
+    >[!note] The SAP Gateway Demo API metadata displays in XML format:
+	>
+    >![The SAP Gateway Demo API metadata is displayed in XML format.](media/sap-gateway-demo-api-metadata-xml.png)
 
-    ![The SAP Gateway Demo API metadata is displayed.](media/sap-gateway-demo-api-metadata-credentials.png)
+2. [] Select all text in the browser window and then copy it to the Windows clipboard.
 
-    After you sign in, the SAP Gateway Demo API metadata displays in XML format:
+3. [] Open a new browser tab and go to `convert.odata-openapi.net`.
 
-    ![The SAP Gateway Demo API metadata is displayed in XML format.](media/sap-gateway-demo-api-metadata-xml.png)
-
-2. [] Select all of the text in the browser window and then copy it to the Windows clipboard.
-
-3. [] In a new browser window, go to `https://convert.odata-openapi.net/`. Paste the XML text into the **Manual Input of OData Definition (XML)** text box.
+1. [] Paste the XML text into the **Manual Input of OData Definition (XML)** text box.
 
     > [!WARNING]
     > If there is any non-XML text in the text box, delete it.
 	![The OData to OpenAPI conversion tool with XML pasted is displayed.](media/odata-to-openapi-conversion-tool-xml-pasted.png)
 
-4. [] Select the **Convert to OpenAPI3** button, then select **Download** to download the OpenAPI file.
+6. [] Select the **Convert to OpenAPI3** button, then select **Download** to download the OpenAPI **openapi-spec.json** file.
 
     ![The OData to OpenAPI conversion tool with the Convert to OpenAPI3 button is displayed.](media/odata-to-openapi-conversion-tool-convert-button.png)
-
-5. [] Make note of the location where the file is saved. You use this file in later exercises.
-
-    > [!NOTE]
-    > The file is named `openapi-spec.json` by default. You can rename the file if you want.
